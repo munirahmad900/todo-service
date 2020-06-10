@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Todo {
 
+	private Long id;
 	private String todoname;
 	private String description;
 	private boolean isCompleted;
@@ -11,11 +12,12 @@ public class Todo {
 	private Date endDate;
 	
 	public Todo() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	public Todo(String todoname, String description, boolean isCompleted, Date startDate, Date endDate) {
+	public Todo(Long id, String todoname, String description, boolean isCompleted, Date startDate, Date endDate) {
 		super();
+		this.id = id;
 		this.todoname = todoname;
 		this.description = description;
 		this.isCompleted = isCompleted;
@@ -23,6 +25,12 @@ public class Todo {
 		this.endDate = endDate;
 	}
 
+	public Long getId(){
+		return id;
+	}
+	public void setId(Long id){
+		this.id = id;
+	}
 	public String getTodoname() {
 		return todoname;
 	}
