@@ -24,6 +24,7 @@ public class TodoController {
 	public List<Todo> getAllTodo(){
 		return todoService.getAllTodo();
 	}
+	
 	@GetMapping(value="/todo/id/{id}")
 	public Todo getMethodName(@PathVariable Long id) {
 		System.out.println("Id-> "+id);
