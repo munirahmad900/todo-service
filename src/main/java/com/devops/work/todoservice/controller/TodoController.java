@@ -7,6 +7,9 @@ import javax.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.devops.work.todoservice.TodoService;
@@ -30,4 +33,18 @@ public class TodoController {
 		return todoService.getTodo(id);
 	}
 	
+	
+	@PostMapping("/todo")
+	public Todo saveTodo(@RequestBody Todo todo) {
+		
+		Todo todo1 = todoService.save(todo);
+		return todo1;
+	}
+	
+	@PutMapping("/todo")
+	public Todo updateTodo(@RequestBody Todo todo) {
+		
+		Todo todo1 = todoService.update(todo);
+		return todo1;
+	}
 }

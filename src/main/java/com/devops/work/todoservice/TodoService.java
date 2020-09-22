@@ -37,4 +37,22 @@ public class TodoService {
 		}
 		return null;
 	}
+	
+	public Todo save(Todo todo) {
+		
+		todoList.add(todo);
+		return todo;
+	}
+
+	public Todo update(Todo todo) {
+		for(Todo t: todoList) {
+			if(t.getId() == todo.getId()) {
+				todoList.remove(todo);
+				todoList.add(todo);
+				break;
+			}
+			
+		}
+		return todo;
+	}
 }
